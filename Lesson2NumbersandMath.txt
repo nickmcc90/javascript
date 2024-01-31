@@ -16,3 +16,10 @@ Rounding numbers...
 Math.round(2.2) --> 2
 Math.round(2.8) --> 3
 
+Getting tax to be precise....
+
+Math.round((2095 + 799) * 0.1) / 100.
+
+Math.floor(2.8) equals 2. It rounds down.
+
+Math.ceil(2.2) equals 3. Always rounds up.
