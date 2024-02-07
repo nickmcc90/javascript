@@ -11,15 +11,67 @@ These are like vectors and dictionaries.
   </head>
   <body>
     <script>
-      const product = {
+      const product = { // these are property value pairs.
         name: 'socks',
         price: 1090
       };
 
       console.log(product);
-      console.log(product.name) // This accesses the VALUE associated with name.
+      console.log(product.name); // This accesses the VALUE associated with name.
+      console.log(product.price);
+
+      product.name = 'cotton socks' // this changes a value inside of the product object currently.
+
+      product.newProperty = true; // we can create new properties in the made object.
+
+      delete product.newProperty; // this deletes properties.
+
+        // now we are gonna add a score tally to our rock paper scissors game.
+    
+
+        // this is bracket notation.
+      const product2 = {
+        name: 'shirt',
+        'delivery-time': '1 day',
+        rating: {
+          stars: 4.5,
+          count: 87           // This is a nested object
+        },
+        fun: function function1() {
+          console.log('function inside object');   // function inside object. This is called a method.
+        }
+      };
+    
+      console.log(product2['name']); // access this value the same.
+
+      // we use bracket notation to get values of properties that have weird characters in them that wouldn't work with normal dot notations.
+    
+      // like this: console.log(product2.delivery-time)
+
+      // we use dot notation by default.
+    
+      console.log(product2.rating.stars); // Accessing nested object.
+
+      product2.fun(); // accesses the function inside object.
+
+      /* console is a built in object. Other built in objects are: 
+        JSON -> similar to JS object, but with less features. Every property and string is in double quotes, and you can't store functions.
+        JSON language is universal, so we prefer to send data between computers.
+        
+        localStorage -> doesn't get deleted when we refresh the page.
+      */
+
+        // this helps us convert objects between JS and JSON.
+      JSON.stringify(product2); // converts product2 to JSON syntax. The 'typeof' function shows that this is a string, ready to be sent.
+      const jsonString = JSON.stringify(product2);
+      JSON.parse(jsonString) // converts JSON string to JS object.
+
+
+
     </script>
   </body>
 </html>
 
 <!--Timestamp: 4:39:01-->
+
+<!--Timestamp: 5:33:19 we are about to learn about auto-boxing.-->
