@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Object Model: DOM</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <button>hello</button>
+    <script>
+      console.log(document.title);
+      document.title = 'Changed';
+
+      console.log(document.body); // This puts the body in js. DOM combines HTML and JS together.
+      console.log(typeof document.body); // This will say it is an object. This is a JS object now.
+
+
+      /*
+      document.body.innerHTML = 'hello'  //Remember how objects work? Document is an object, with an object of body inside, with a property of innerHTML inside.
+      document.title = 'Good job!' // This changes the title of the webpage.
+
+      // Document has a bunch of objects that can model the webpage, hence DOM.s
+
+      */
+    
+    </script>
+  </body>
+</html>
