@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM projects</title>
+    <style>
+        body {
+        font-family: Arial;
+      }
+
+      .subscribe-button {
+        border: none;
+        color: white;
+        background-color: black;
+        padding: 10px 14px;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+      .is-subscribed {
+        background-color: rgb(240,240,240);
+        color: black;
+      }
+
+      .cost-input {
+        font-size: 15px;
+        padding: 10px 10px;
+      }
+
+      .calculate-button {
+        background-color: green;
+        color: white;
+        padding: 12px 15px;
+        border: none;
+        font-size: 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button class="js-subscribe-button subscribe-button" onclick="      // You can use multiple classes separated by spaces for elements.
+      subscribe();
+    ">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input class='js-input cost-input' placeholder="Cost of holder" onkeydown="
+      handlecostKeydown(event);
+    ">
+    <button class="calculate-button" onclick="
+      calculateCost();
+    ">Calculate</button>
+    <p class="js-totally"></p>
+
+    <script>
+      String(25);
+
+      window.document
+
+
+      function handlecostKeydown(event) {
+        if(event.key === 'Enter') {
+          calculateCost();
+        }
+      }
+
+      function calculateCost() {
+        const totalElement = document.querySelector('.js-input');
+        let cost = Number(totalElement.value);
+
+        if(cost < 40) {   
+          cost += 10;
+        }
+
+        document.querySelector('.js-totally').innerHTML = `$${cost}`;
+      }
+
+      function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if(buttonElement.innerText === 'Subscribe') {
+          buttonElement.innerHTML = 'Subscribed';           // We'll also want to change the styling when we click the button.
+          buttonElement.classList.add('is-subscribed');     // So after clicking the button (since the subscribe() function is inside 'onclick'), this button will have a new class. We can style this class in css now.
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+          buttonElement.classList.remove('is-subscribed');    // This removes the class after clicking it again.
+        }
+      }
+    </script>
+  </body>
+</html>
