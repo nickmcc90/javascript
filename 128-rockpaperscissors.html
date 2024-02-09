@@ -20,6 +20,8 @@
     showResult('scissors');
     ">Scissors</button>
 
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
     <p class="js-score"></p>
 
     <button onclick="
@@ -112,18 +114,22 @@
             score.ties += 1;
           }
 
-          alert(`You picked ${playermove}. Computer picked ${computerMove}. ${result}.`);
+          document.querySelector('.js-result').innerHTML = `${result}`;
+
+          document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+
+          document.querySelector('.js-moves').innerHTML = `You ${playermove} - ${computerMove} Computer`;
+
           localStorage.setItem('score', JSON.stringify(score)); // this is the method to save things to local storage. The first arg is a key, second arg is a value.
 
+          updateResult();
 
 
-          updateScoreElement();
 
       }
 
-      function updateScoreElement() {
-        document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
-      }
+
+
     </script>
 
     
