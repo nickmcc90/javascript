@@ -1,92 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DOM projects</title>
+    <title>Rock Paper Scissors.</title>
     <style>
-        body {
-        font-family: Arial;
-      }
-
-      .subscribe-button {
-        border: none;
-        color: white;
-        background-color: black;
-        padding: 10px 14px;
-        border-radius: 20px;
-        font-weight: bold;
-        cursor: pointer;
-        margin-bottom: 30px;
-      }
-
-      .is-subscribed {
-        background-color: rgb(240,240,240);
-        color: black;
-      }
-
-      .cost-input {
-        font-size: 15px;
-        padding: 10px 10px;
-      }
-
-      .calculate-button {
-        background-color: green;
-        color: white;
-        padding: 12px 15px;
-        border: none;
-        font-size: 15px;
-        cursor: pointer;
-      }
     </style>
+
+    <link rel="stylesheet" href="styles/130-rockpaperscissors.css">
   </head>
   <body>
-    <p>YouTube Subscribe Button</p>
-    <button class="js-subscribe-button subscribe-button" onclick="      // You can use multiple classes separated by spaces for elements.
-      subscribe();
-    ">Subscribe</button>
+    <p class="title">Rock Paper Scissors</p>
 
-    <p>Amazon Shipping Calculator</p>
-    <input class='js-input cost-input' placeholder="Cost of holder" onkeydown="
-      handlecostKeydown(event);
-    ">
-    <button class="calculate-button" onclick="
-      calculateCost();
-    ">Calculate</button>
-    <p class="js-totally"></p>
-
-    <script>
-      String(25);
-
-      window.document
+    <button onclick="
+    showResult('rock');
+    " class="move-button"><img class="move-icon" src="js-images/rock-emoji.png"></button>
 
 
-      function handlecostKeydown(event) {
-        if(event.key === 'Enter') {
-          calculateCost();
-        }
-      }
+    <button onclick="
+    showResult('paper');
+    " class="move-button"><img class="move-icon" src="js-images/paper-emoji.png"></button>
 
-      function calculateCost() {
-        const totalElement = document.querySelector('.js-input');
-        let cost = Number(totalElement.value);
 
-        if(cost < 40) {   
-          cost += 10;
-        }
+    <button onclick="
+    showResult('scissors');
+    " class="move-button"><img class="move-icon" src="js-images/scissors-emoji.png"></button>
 
-        document.querySelector('.js-totally').innerHTML = `$${cost}`;
-      }
+    <p class="js-result result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score score"></p>
 
-      function subscribe() {
-        const buttonElement = document.querySelector('.js-subscribe-button');
+    <button onclick="
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
 
-        if(buttonElement.innerText === 'Subscribe') {
-          buttonElement.innerHTML = 'Subscribed';           // We'll also want to change the styling when we click the button.
-          buttonElement.classList.add('is-subscribed');     // So after clicking the button (since the subscribe() function is inside 'onclick'), this button will have a new class. We can style this class in css now.
-        } else {
-          buttonElement.innerHTML = 'Subscribe';
-          buttonElement.classList.remove('is-subscribed');    // This removes the class after clicking it again.
-        }
-      }
+    localStorage.removeItem('score');
+    updateScoreElement();
+
+    
+    " class="reset-score-button">Reset Score</button>
+    <script src="scripts/130-rockpaperscissors.js">
     </script>
+
+    
   </body>
 </html>
