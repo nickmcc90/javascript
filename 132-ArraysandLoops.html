@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+      const myArray = [10, 20, 30];
+      console.log(myArray);
+
+      console.log(myArray[0]);
+      myArray[1] = 99;
+      console.log(myArray);
+
+      [1, 'hello', true, {name: 'socks' }, [1, 2]] // we can put all kinds of different stuff in arrays.
+
+      // Arrays have a weird behavior when we try to check the type of array.
+
+      console.log(typeof[1,2]);  // It will say that this is an object. It's right, but it's also an array.
+      Array.isArray([1,2]); // We need this array function to check instead.
+
+      console.log(myArray.length);
+
+      myArray.push(100);        // pushes a value to the back of the array.
+      console.log(myArray);
+
+      myArray.splice(0,1) // first arg is the index to remove, second arg is the number of values to remove.
+
+      console.log(myArray);
+
+
+      // NOW WE ARE GONNA LEARN ABOUT LOOPS
+
+      let i = 1;
+      while(i <= 5) {
+        console.log(i);
+        i++; 
+      }
+
+      for(let i = 1; i <= 5; i++) {
+        console.log(i);
+      }
+
+      let randomNumber = 0;
+      while(randomNumber < 0.5) {
+        randomNumber = Math.random();
+        console.log('man what the heck')
+      }
+
+
+      const todoList = [
+        'make dinner',
+        'watch Youtube',      // we need a for loop to print out all the values in this array.
+        'do the dishes'
+      ];
+
+      for(let i = 0; i < todoList.length; i++) {
+        console.log(todoList[i]);
+      }
+
+    </script>
+  </body>
+</html>
+
+<!--Timestamp 8:30:06-->
+
+<!--Timestamp 9:02:24-->
