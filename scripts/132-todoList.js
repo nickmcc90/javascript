@@ -7,8 +7,15 @@ function renderTodoList () {    // (2) This function takes the array and gets al
 
   for(let i = 0; i < toDoArray.length; i++) {
     const todo = toDoArray[i];                    // (3) We are making html here, from the input text.
-    const html = `<p>${todo}</p>`;
-    todoListHTML += html;
+    const html = `
+    <p>
+      ${todo} 
+      <button onclick="
+        toDoArray.splice(${i}, 1);
+        renderTodoList();
+      " >Delete</button>             
+    </p>`;
+    todoListHTML += html;                         // Template strings can do multiline coding, so we can format stuff like real html here.
   }
   console.log(todoListHTML);
 
