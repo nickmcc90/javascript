@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 11 Exercises!</title>
+    <style></style>
+  </head>
+  <body>
+
+    <script>
+      const nums = [10, 20, 30];
+      nums[2] = 99;
+      console.log(nums);
+
+      getLastValue([1, 20, 22, 24, 5]);
+      getLastValue(['hi', 'hello', 'good']);
+
+      arraySwap(['hi', 'hello', 'good']);
+      arraySwap([1, 20, 22, 24, 5]);
+
+      function getLastValue (array) {
+        const last = array[array.length-1];
+        console.log(last);
+      }
+
+
+      function arraySwap (array) {
+        const sizing = array.length - 1;
+        let x = array[0];
+        let y = array[sizing];
+        array[0] = y;
+        array[sizing] = x;
+        console.log(array);
+      }
+
+      //11d
+      for(let i = 0; i <= 10; i + 2) {
+        console.log(i);
+      }
+
+      //11e
+      for(let i = 5; i >= 0; i--) {
+        console.log(i);
+      }
+
+    </script>
+  </body>
+</html>
+
+<!--Timestamp: 9:26:17 see if live server is working.-->
