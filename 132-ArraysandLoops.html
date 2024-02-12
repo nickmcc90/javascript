@@ -46,7 +46,7 @@
       let randomNumber = 0;
       while(randomNumber < 0.5) {
         randomNumber = Math.random();
-        console.log('man what the heck')
+        console.log('man what the heck');
       }
 
 
@@ -60,6 +60,23 @@
         console.log(todoList[i]);
       }
 
+      // The accumulator pattern.
+
+      const nums = [1,1,3];
+      let total = 0;
+
+      for(let i = 0; i < nums.length; i++) {
+        const num = nums[i]
+        total += num;
+      }
+      console.log(total);
+
+      const numsDoubled = [];
+      for(let i = 0; i < nums.length; i++) {
+        let value = nums[i] * 2;
+        numsDoubled.push(value);
+      }
+      console.log(numsDoubled);
     </script>
   </body>
 </html>
