@@ -77,6 +77,45 @@
         numsDoubled.push(value);
       }
       console.log(numsDoubled);
+
+      // arrays work in the same way that objects do in that they both reference some value, they aren't THAT value.
+
+      const array1 = [1,2,3];
+      const array2 = array1; //Array2 doesn't actually have the values in array1, it has array1's reference.
+      array2.push(4)
+      console.log(array1)  // Even though we changed array2, array1 still gets changed. They are both the same reference.
+
+      // If we make array2 equal to array1.slice(), this'll create a new array for array2 to reference, so they will be different, so instead..
+      const arrayy = [1,2,3];
+      const arrayyy = arrayy.slice();
+      arrayyy.push(3);
+      console.log(arrayy)     // Now making a change to one won't make a change to another.
+
+      //Destructuring
+
+      const [firstValue, secondValue] = [1,2,3];  //firstValue = 1, and secondValue = 2 here.
+
+      for(let i = 1; i <=10; i++) {
+        if(i === 3) {
+          continue;   // once i reaches 3, it skips it. Continue lets us skip one iteration of the loop.
+        }
+        console.log(i);
+        if(i == 8) {
+          break;    // once i reaches 8, break causes the loop to stop. 
+        }
+      }
+      
+      let xx = 0;
+      while(xx <= 10) { 
+        if(xx % 3 === 0) {
+          i++;                // Make sure to increment your i before the continue in a while loop, or else it'll run forever.              
+          continue;
+        }
+        console.log(xx);
+        xx++
+      }
+      
+
     </script>
   </body>
 </html>
