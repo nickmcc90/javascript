@@ -2,20 +2,18 @@
 <html>
   <head>
     <title>To do list practice</title>
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="styles/132-todoList.css">
     <body>
       <p>To Do List</p>
-      <input class="js-input" placeholder="Todo name">
-      <input type="date"> <!--This input is a calendar type, just like how the type could be radio, checkbox, etc.-->
-      <button onclick="
-        toDo();
-      ">Add</button>
-
-      <div class="js-todo-list"></div>
-
-
+      <div class="input-cssgrid">
+        <input class="js-input name-input" placeholder="Todo name">
+        <input class="js-due-date-input due-date-input" type="date"> <!--This input is a calendar type, just like how the type could be radio, checkbox, etc.-->
+        <button class="add-todo-button" onclick="
+          toDo();
+        ">Add</button>
+        </div>
+      </div>
+      <div class="js-todo-list cssgrid"></div>
       <script src="scripts/132-todoList.js">
       </script>
     </body>
